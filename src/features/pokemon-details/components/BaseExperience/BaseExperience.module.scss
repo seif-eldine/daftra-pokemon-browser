@@ -1,0 +1,23 @@
+.experienceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.experienceValue {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--lavander-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}

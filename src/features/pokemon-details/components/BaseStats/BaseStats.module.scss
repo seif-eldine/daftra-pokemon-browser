@@ -1,0 +1,56 @@
+.baseStats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--black-color);
+}
+
+.statContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBar {
+  flex: 1;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--black-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.statValue {
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  min-width: 40px;
+  text-align: right;
+}

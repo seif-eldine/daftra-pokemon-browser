@@ -1,0 +1,44 @@
+.abilitiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.abilitiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.abilityWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.abilityBadge {
+  display: inline-block;
+  padding: 6px 10px;
+  //   background-color: #e8e8e8;
+  background-color: var(--background-color);
+  border: none;
+  border-radius: 20px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: #5a5a5a;
+  cursor: default;
+}
+
+.hiddenLabel {
+  color: var(--text-lighter);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
+}

@@ -1,0 +1,39 @@
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.measurements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.measurementItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.measurementIcon {
+  font-size: 24px;
+}
+
+.measurementLabel {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  margin: 0 0 4px 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.measurementValue {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-color);
+  margin: 0;
+}
