@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { usePokemonList } from "../../hooks/usePokemonPagination";
 import PokemonCard from "../pokemon-card/PokemonCard";
+import Paginator from "../paginator/Paginator";
 import styles from "./PageControlsView.module.scss";
 
+const LIMIT = 20;
 const PageControlsView = () => {
     const [page, setPage] = useState(1);
 
-    const { data, isLoading, isError, refetch } = usePokemonList(page);
+    const { data, isLoading, isError, refetch } = usePokemonList(page, LIMIT);
 
     if (isLoading) return <p>Loading...</p>;
 
@@ -33,20 +35,12 @@ const PageControlsView = () => {
                 })}
             </div>
 
-            <div className="paginator">
-                <button
-                    onClick={() => setPage((p) => Math.max(p - 1, 1))}
-                    disabled={page === 1}
-                >
-                    Prev
-                </button>
-
-                <span>Page {page}</span>
-
-                <button onClick={() => setPage((p) => p + 1)}>
-                    Next
-                </button>
-            </div>
+            <Paginator
+                currentPage={page}
+                totalCount={data?.count || 0}
+                itemsPerPage={LIMIT}
+                onPageChange={setPage}
+            />
 
         </>
     );

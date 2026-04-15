@@ -1,0 +1,86 @@
+.paginatorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-block: 32px;
+}
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navButton {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--border-color);
+  background-color: var(--white-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--background-color);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pageButton {
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--white-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(.active) {
+    background-color: var(--background-color);
+  }
+
+  &.active {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border-color: var(--black-color);
+  }
+}
+
+.ellipsis {
+  padding: 0 8px;
+  color: var(--text-light);
+}
+
+.ellipsisContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pageInfo {
+  font-size: var(--font-size-xs);
+  color: var(--text-light);
+}
