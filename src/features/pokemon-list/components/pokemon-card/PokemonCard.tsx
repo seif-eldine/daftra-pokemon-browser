@@ -12,9 +12,11 @@ const PokemonCard = ({ name, pokemonUrl }: PokemonCardProps) => {
 
     return (
         <div className={styles.pokemonCard}>
-            <img src={imageUrl} alt={name} loading="lazy" />
-            <p>{name}</p>
-            <p>#{id}</p>
+            <div className={styles.imageContainer}>
+                <img src={imageUrl} alt={name} loading="lazy" />
+            </div>
+            <p className={styles.pokemonName}>{name}</p>
+            <p className={styles.pokemonId}>#{id}</p>
         </div>
     );
 };
