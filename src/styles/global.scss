@@ -1,5 +1,13 @@
+@use "./_custom.scss" as *;
+@use "./_variables.scss" as *;
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
