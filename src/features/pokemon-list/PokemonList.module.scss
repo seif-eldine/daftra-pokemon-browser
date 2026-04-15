@@ -1,6 +1,17 @@
+.pokemonListPage {
+  background-color: var(--secondary-color);
+}
+
 .title {
-  font-weight: bold;
+  text-align: center;
 }
 
 .actionButtonsHolder {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
 }

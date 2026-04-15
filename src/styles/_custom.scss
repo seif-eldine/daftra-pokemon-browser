@@ -1,9 +1,25 @@
-#pageWrapper {
+#page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+
+  #container {
+    width: 70%;
+  }
 }
 
-#page {
-  width: 100%;
+#pageTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-top: 20px;
+}
+
+#pageIntroText {
+  margin-block: 20px;
+  text-align: center;
+}
+
+.secondaryText {
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
 }

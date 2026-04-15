@@ -1,4 +1,6 @@
 
+import styles from "./Button.module.scss";
+
 interface ButtonProps {
     caption: string;
     onClick: () => void;
@@ -8,7 +10,7 @@ interface ButtonProps {
 const Button = ({ caption, onClick, isActive }: ButtonProps) => {
 
     return (
-        <button className={isActive ? "active" : ""} onClick={onClick}>
+        <button className={isActive ? styles.active : ""} onClick={onClick}>
             {caption}
         </button>
     )

@@ -10,17 +10,17 @@ const PokemonList = () => {
     const [view, setView] = useState<"page-controls" | "inf-scroll">("page-controls");
 
     return (
-        <div id="pageWrapper">
-            <div id="page">
-                <p className={styles.title}>Pokedex</p>
-                <p>Discover and explore Pokemon with infinite scroll</p>
+        <div id="page" className={styles.pokemonListPage}>
+            <div id="container">
+                <p className={styles.title} id="pageTitle">Pokedex</p>
+                <p className="secondaryText" id="pageIntroText">Discover and explore Pokemon with {view === "page-controls" ? "Page Controls" : "Infinite Scroll"}</p>
 
                 <div className={styles.actionButtonsHolder}>
                     <Button isActive={view === "page-controls"} caption="Page Controls" onClick={() => setView("page-controls")} />
                     <Button isActive={view === "inf-scroll"} caption="Infinite Scroll" onClick={() => setView("inf-scroll")} />
                 </div>
 
-                <div className={styles.viewHolder}>
+                <div className={`contentHolder ${styles.viewHolder} `}>
 
                     {view === "page-controls" ? <PageControlsView /> : <InfiniteScrollView />}
                 </div>
