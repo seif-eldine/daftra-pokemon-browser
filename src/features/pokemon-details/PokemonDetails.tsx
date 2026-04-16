@@ -12,9 +12,10 @@ import styles from "./PokemonDetails.module.scss";
 import { capitalizeFirst } from "./utils/strings-utils";
 
 const PokemonDetails = () => {
+
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const { data, isLoading, isError } = usePokemonDetails(id!);
+    const { data, isLoading } = usePokemonDetails(id!);
 
     if (isLoading) {
         return (
@@ -24,14 +25,6 @@ const PokemonDetails = () => {
                         <PokemonDetailsSkeleton />
                     </div>
                 </div>
-            </div>
-        );
-    }
-
-    if (isError || !data) {
-        return (
-            <div>
-                <p>Error loading Pokemon details</p>
             </div>
         );
     }

@@ -6,5 +6,6 @@ export const usePokemonDetails = (id: string | number) => {
     return useQuery<PokemonDetailsResponse>({
         queryKey: ["pokemonDetails", id],
         queryFn: () => getPokemonDetails(id),
+        throwOnError: true,
     });
 };

@@ -7,9 +7,10 @@ import styles from "./PageControlsView.module.scss";
 
 const LIMIT = 20;
 const PageControlsView = () => {
+
     const [page, setPage] = useState(1);
 
-    const { data, isLoading, isError, refetch } = usePokemonList(page, LIMIT);
+    const { data, isLoading } = usePokemonList(page, LIMIT);
 
     if (isLoading) {
         return (
@@ -20,14 +21,6 @@ const PageControlsView = () => {
             </div>
         );
     }
-
-    if (isError)
-        return (
-            <div>
-                Error loading data
-                <button onClick={() => refetch()}>Retry</button>
-            </div>
-        );
 
     return (
         <>

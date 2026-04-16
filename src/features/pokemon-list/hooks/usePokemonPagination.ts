@@ -8,6 +8,7 @@ export const usePokemonList = (page: number, limit: number = 20) => {
     queryKey: ["pokemonList", page],
     queryFn: () => getPokemonList(limit, offset),
     placeholderData: keepPreviousData,
+    throwOnError: true,
 
   });
 };

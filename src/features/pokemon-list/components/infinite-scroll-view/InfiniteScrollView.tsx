@@ -10,7 +10,6 @@ const InfiniteScrollView = () => {
     const {
         data,
         isLoading,
-        isError,
         fetchNextPage,
         hasNextPage,
         isFetchingNextPage,
@@ -55,8 +54,6 @@ const InfiniteScrollView = () => {
             </div>
         );
     }
-
-    if (isError) return <p>Error loading data</p>;
 
     return (
         <>
