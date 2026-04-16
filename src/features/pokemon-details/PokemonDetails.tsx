@@ -15,9 +15,9 @@ const PokemonDetails = () => {
 
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const { data, isLoading } = usePokemonDetails(id!);
+    const { data, isLoading, isError } = usePokemonDetails(id!);
 
-    if (isLoading) {
+    if (isLoading || isError || !data) {
         return (
             <div id="page" className={styles.pokemonDetailsPage}>
                 <div id="container">
