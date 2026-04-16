@@ -1,0 +1,120 @@
+.skeletonContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--white-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.headerSkeleton {
+  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.nameLineOne {
+  margin: 0 auto;
+}
+
+.nameLineTwo {
+  margin: 0 auto;
+}
+
+.contentSkeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 30px;
+  padding-top: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+.leftSectionSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.imageSkeleton {
+  display: flex;
+  justify-content: center;
+}
+
+.badgeSkeleton {
+  display: flex;
+  justify-content: center;
+}
+
+.infoSkeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.measurementItemSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.measurementTextSkeleton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.marginBottom {
+  margin-bottom: 8px;
+}
+
+.rightSectionSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.statItemSkeleton {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statBarSkeleton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.abilitiesSkeleton {
+  margin-top: 8px;
+}
+
+.abilityBadgesSkeleton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badgeItem {
+  display: inline-block;
+}
+
+.experienceSkeleton {
+  margin-top: 24px;
+}

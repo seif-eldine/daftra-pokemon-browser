@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { usePokemonList } from "../../hooks/usePokemonPagination";
 import PokemonCard from "../pokemon-card/PokemonCard";
+import PokemonCardSkeleton from "../pokemon-card-skeleton/PokemonCardSkeleton";
 import Paginator from "../paginator/Paginator";
 import styles from "./PageControlsView.module.scss";
 
@@ -10,7 +11,15 @@ const PageControlsView = () => {
 
     const { data, isLoading, isError, refetch } = usePokemonList(page, LIMIT);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) {
+        return (
+            <div className={styles.cardsHolder}>
+                {Array.from({ length: LIMIT }).map((_, i) => (
+                    <PokemonCardSkeleton key={`skeleton-${i}`} />
+                ))}
+            </div>
+        );
+    }
 
     if (isError)
         return (

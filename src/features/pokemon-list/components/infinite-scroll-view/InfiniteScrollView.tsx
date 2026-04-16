@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { usePokemonInfinite } from "../../hooks/usePokemonInfinite";
 import PokemonCard from "../pokemon-card/PokemonCard";
+import PokemonCardSkeleton from "../pokemon-card-skeleton/PokemonCardSkeleton";
 import styles from "./InfiniteScrollView.module.scss";
-import Spinner from "@/shared/components/ui/spinner/Spinner";
+
+const LIMIT = 20;
 
 const InfiniteScrollView = () => {
     const {
@@ -44,7 +46,15 @@ const InfiniteScrollView = () => {
         };
     }, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) {
+        return (
+            <div className={styles.cardsHolder}>
+                {Array.from({ length: LIMIT }).map((_, i) => (
+                    <PokemonCardSkeleton key={`skeleton-${i}`} />
+                ))}
+            </div>
+        );
+    }
 
     if (isError) return <p>Error loading data</p>;
 
@@ -63,9 +73,22 @@ const InfiniteScrollView = () => {
                 })}
             </div>
 
-            <div ref={loadMoreRef} />
+            {/* I will leave this (Old) loading spinner for any reviewer to test, as I'm not sure which one is better for UX. as the task design reference mentions both. Feel free to remove one of them.*/}
 
-            {isFetchingNextPage && <p className={styles.loadingSpan}><Spinner /> Loading more Pokemon...</p>}
+            {/* <div ref={loadMoreRef} />
+
+            {isFetchingNextPage && <p className={styles.loadingSpan}><Spinner /> Loading more Pokemon...</p>} */}
+
+
+            {isFetchingNextPage && (
+                <div className={styles.loadingContainer}>
+                    {Array.from({ length: LIMIT }).map((_, i) => (
+                        <PokemonCardSkeleton key={`next-skeleton-${i}`} />
+                    ))}
+                </div>
+            )}
+
+            {!isFetchingNextPage && <div ref={loadMoreRef} />}
         </>
     );
 };

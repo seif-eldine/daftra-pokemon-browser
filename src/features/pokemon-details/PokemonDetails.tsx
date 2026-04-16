@@ -7,6 +7,7 @@ import BaseStats from "./components/BaseStats/BaseStats";
 import Abilities from "./components/Abilities/Abilities";
 import BaseExperience from "./components/BaseExperience/BaseExperience";
 import Info from "./components/Info/Info";
+import PokemonDetailsSkeleton from "./components/pokemon-details-skeleton/PokemonDetailsSkeleton";
 import styles from "./PokemonDetails.module.scss";
 import { capitalizeFirst } from "./utils/strings-utils";
 
@@ -16,7 +17,15 @@ const PokemonDetails = () => {
     const { data, isLoading, isError } = usePokemonDetails(id!);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return (
+            <div id="page" className={styles.pokemonDetailsPage}>
+                <div id="container">
+                    <div id={styles.detailsCardContainer}>
+                        <PokemonDetailsSkeleton />
+                    </div>
+                </div>
+            </div>
+        );
     }
 
     if (isError || !data) {

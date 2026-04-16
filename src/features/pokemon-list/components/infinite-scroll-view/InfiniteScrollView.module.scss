@@ -4,6 +4,13 @@
   gap: 16px;
 }
 
+.loadingContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
 .loadingSpan {
   margin-block: 2rem;
   text-align: center;
