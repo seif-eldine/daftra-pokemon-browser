@@ -15,7 +15,14 @@ const PokemonCard = ({ name, pokemonUrl }: PokemonCardProps) => {
         <Link to={`/pokemon/${id}`} className={styles.pokemonCardLink}>
             <div className={styles.pokemonCard}>
                 <div className={styles.imageContainer}>
-                    <img src={imageUrl} alt={name} loading="lazy" />
+                    <img
+                        src={imageUrl}
+                        alt={name}
+                        loading="lazy"
+                        onError={(e) => {
+                            e.currentTarget.src = "/public/pokemon-default.png";
+                        }}
+                    />
                 </div>
                 <p className={styles.pokemonName}>{name}</p>
                 <p className={styles.pokemonId}>#{id}</p>
